@@ -6,7 +6,7 @@ namespace SCPGuide
 	{
 		public string GetCommandDescription()
 		{
-			return "Refreshes the info documents.";
+			return "Reloads the info documents.";
 		}
 
 		public string GetUsage()
@@ -17,7 +17,7 @@ namespace SCPGuide
 		public string[] OnCall(ICommandSender sender, string[] args)
 		{
 			EventHandler.LoadInfo();
-			return new[] { "Info refreshed." };
+			return new[] { "Info reloaded." };
 		}
 	}
 }
