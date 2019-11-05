@@ -2,7 +2,7 @@
 
 namespace SCPGuide
 {
-	class RefreshCommand : ICommandHandler
+	class ReloadCommand : ICommandHandler
 	{
 		public string GetCommandDescription()
 		{
@@ -11,7 +11,7 @@ namespace SCPGuide
 
 		public string GetUsage()
 		{
-			return "SCPGREFRESH / SCPGR";
+			return "SCPGRELOAD / SCPGR";
 		}
 
 		public string[] OnCall(ICommandSender sender, string[] args)

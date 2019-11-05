@@ -27,7 +27,7 @@ namespace SCPGuide
 		public override void Register()
 		{
 			AddEventHandlers(new EventHandler());
-			AddCommands(new[] { "scpgrefresh", "scpgr" }, new RefreshCommand());
+			AddCommands(new[] { "scpgreload", "scpgr" }, new ReloadCommand());
 		}
 	}
 }
