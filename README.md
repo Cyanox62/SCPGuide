@@ -15,6 +15,13 @@ Place the "SCPGuide.dll" file in your sm_plugins folder.
  
 # Commands
 
+### Admin commands
 | Command         | Description
 | :-------------: | :------: |
 | SCPGRELOAD / SCPGR | Reloads the info folder. |
+
+### Client commands
+| Command         | Description
+| :-------------: | :------: |
+| info | Lists all available infos. |
+| info [infoname] | View the given info. |
