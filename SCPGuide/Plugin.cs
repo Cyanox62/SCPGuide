@@ -26,7 +26,8 @@ namespace SCPGuide
 
 		public override void Register()
 		{
-			AddEventHandlers(new EventHandler());
+			AddEventHandlers(new EventHandler(this));
+			AddConfig(new Smod2.Config.ConfigSetting("scpg_message_split_size", 8, true, "If a message contains more than this number of lines it will be split into two messages"));
 			AddCommands(new[] { "scpgreload", "scpgr" }, new ReloadCommand());
 		}
 	}

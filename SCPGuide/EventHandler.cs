@@ -1,12 +1,19 @@
 ﻿using Smod2.Events;
 using Smod2.EventHandlers;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace SCPGuide
 {
 	partial class EventHandler : IEventHandlerWaitingForPlayers, IEventHandlerCallCommand
 	{
+		private Plugin instance;
+
+		public EventHandler(Plugin plugin) => instance = plugin;
+
 		public void OnWaitingForPlayers(WaitingForPlayersEvent ev)
 		{
+			LoadConfigs();
 			LoadInfo();
 		}
 
@@ -17,11 +24,11 @@ namespace SCPGuide
 			{
 				if (split.Length < 2)
 				{
-					ev.ReturnMessage = $"Available infos:\n{infoList}";// list infos
+					ev.ReturnMessage = TrySplitMessage(ev.Player, infoList, "Available Infos");
 				}
 				else if (info.ContainsKey(split[1]))
 				{
-					ev.ReturnMessage = $"Info for {split[1]}:\n{info[split[1]]}";
+					ev.ReturnMessage = TrySplitMessage(ev.Player, info[split[1]], $"Info for {split[1]}");
 				}
 				else
 				{
